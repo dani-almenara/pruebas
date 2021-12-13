@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}Kyduu, your Events{% endblock title %}
+
+{% block content %}
+
+{% if event_list %}
+    <ul>
+    {% for event in event_list %}
+        <li><a href="/events/{{ event.id }}/">{{ event.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No events in this locality.</p>
+{% endif %}
+
+{% endblock content %}

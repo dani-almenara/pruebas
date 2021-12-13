@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}Kyduu, your Events{% endblock title %}
+
+{% block content %}
+
+{% if event %}
+    <p><h2>{{ event.title }}</h2></p>
+    <p>Descripcion: <br>{{ event.description }}</p>
+    <P>tipo de evento: {{ event.type_event }}</P>
+    <p>Autor: {{ event.author }}</p>
+{% else %}
+    <p>No events in this locality.</p>
+{% endif %}
+
+{% endblock content %}

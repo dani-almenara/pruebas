@@ -1,0 +1,41 @@
+version: "3.8"
+   
+services:
+
+  # mysql
+  db:
+    image: mysql:8.0.23
+    container_name: kyduu_mysql
+    volumes:
+      - db_data_kyduu:/var/lib/mysql
+    # restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports: 
+      - "3306:3306"
+
+  # admin bd web
+  adminer:
+    container_name: kyduu_adminer
+    image: adminer:4.8.1
+    # restart: always
+    ports:
+      - 8080:8080
+
+  # django
+  web:
+    build: ./django
+    container_name: kyduu_web
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./django/code:/code
+      - ./.env:/code/kyduu/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+volumes: 
+  db_data_kyduu:
