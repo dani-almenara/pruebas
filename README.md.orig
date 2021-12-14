@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 feature 1
 =======
 feature2
@@ -28,7 +30,13 @@ Crear Superusuario en backend kyduu
 
 ###Si se añade un modulo python
 Para añadirlo a requirements.txt y poder instalarlo al arrancar el contenedor
-```docker-compose exec web pip freeze > requirements.txt``# Acceso a Adminier para ver la BBDD.
+```docker-compose exec web pip freeze > requirements.txt```
+
+###Test
+Comando para ejecutar todos los test
+```docker-compose exec web python manage.py test```
+
+## Acceso a Adminier para ver la BBDD.
 http://localhost:8080/
 servidor: db
 usuario: root
