@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+feature 1
+=======
+feature2
+feature 2 changes
+>>>>>>> feature2_additional
+=======
 ## kyduu
 ---
 
@@ -32,4 +40,5 @@ Comando para ejecutar todos los test
 http://localhost:8080/
 servidor: db
 usuario: root
-Password: <mirar_env_docker-compose>
+Password: <mirar_env_docker-compose>another fix to bug#1234
+>>>>>>> b3e1b06 (erally fixing bug#1234)
